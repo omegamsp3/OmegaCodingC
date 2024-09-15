@@ -1,5 +1,5 @@
 <html>
 <body>
-<h1>THIS IS MY FIRST REPO</h1>
+<h1>THIS IS MY FIRST REPOSITORY</h1>
 </body>
 </html>
