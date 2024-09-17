@@ -14,12 +14,14 @@ int main()
     scanf("%d",&b);
     int sum = 0;
     int i;
+    printf("%d %d ",a,b);
     for(i=1; i<=n - 2; i++){
         sum = a + b;
         a=b;
-        b=sum;
-        
+        b=sum;   
+
+        printf("%d ",sum);   
     }
-    printf("Fibonacci series : %d",sum);
+    
     return 0;
 }
