@@ -1,26 +1,36 @@
-#include<math.h>
-#include<stdio.h>
-int main(){
-    int n;
-    printf("Enter number : ");
-    scanf("%d",&n);
-    int ld;
-    int LD = n%10;
-    int power;
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num, originalNum, ld,count = 0;
     int sum = 0;
-    int m = n;
-     while(m!=0){
-         ld = m % 10;
-         m = m/10;
-         sum = sum + pow(ld,LD);
-     }
-    if(sum==n){
-        printf("%d is an ARMSTRONG NUMBER",n);
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    // Store the original number
+    originalNum = num;
+
+    // Calculate the number of digits
+    int temp = num;
+    while (temp != 0) {
+        temp /= 10;
+        count++;
     }
-    else{
-        printf("%d is not an ARMSTRONG NUMBER",n);
+
+    // Calculate the sum of each digit raised to the power of numDigits
+    temp = num;
+    while (temp != 0) {
+        ld = temp % 10;
+        sum = sum+ pow(ld, count);
+        temp = temp /10;
     }
-     
+
+    // Check if the sum is equal to the original number
+    if (sum == originalNum)
+        printf("%d is an Armstrong number.\n", originalNum);
+    else
+        printf("%d is not an Armstrong number.\n", originalNum);
+
     return 0;
 }
-//VS code has a glitch in giving us output for power of 5. It is giving one number less than original result.
